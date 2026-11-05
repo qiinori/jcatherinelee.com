@@ -15,7 +15,7 @@ describe('Footer Component', () => {
         const github = screen.getByText('GitHub');
         const email = screen.getByText('Email');
 
-        expect(linkedin.closest('a')).toHaveAttribute('href', 'https://linkedin.com/in/cathyleedev');
+        expect(linkedin.closest('a')).toHaveAttribute('href', 'https://www.linkedin.com/in/catl1/');
         expect(github.closest('a')).toHaveAttribute('href', 'https://github.com/qiinori');
         expect(email.closest('a')).toHaveAttribute('href', 'mailto:c@jcatherinelee.com');
     });

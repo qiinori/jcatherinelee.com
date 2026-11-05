@@ -156,7 +156,7 @@ export const content = {
     },
     footer: {
         links: [
-            { label: "LinkedIn", url: "https://linkedin.com/in/cathyleedev" },
+            { label: "LinkedIn", url: "https://www.linkedin.com/in/catl1/" },
             { label: "GitHub", url: "https://github.com/qiinori" },
             { label: "Email", url: "mailto:c@jcatherinelee.com" }
         ],
