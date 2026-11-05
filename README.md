@@ -2,7 +2,7 @@
 
 A modern, responsive personal portfolio website built with React, Vite, and Framer Motion.
 
-**Live**: [cathylee.dev](https://cathylee.dev)
+**Live**: [jcatherinelee.com](https://jcatherinelee.com)
 
 ## Features
 
