@@ -23,7 +23,16 @@ export default defineConfig([
       },
     },
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      // Core no-unused-vars does not see JSX usage such as <motion.div>.
+      'no-unused-vars': ['error', { varsIgnorePattern: '^([A-Z_]|motion$)' }],
     },
+  },
+  {
+    files: ['src/setupTests.js', '**/__tests__/**'],
+    languageOptions: { globals: globals.vitest },
+  },
+  {
+    files: ['playwright.config.js'],
+    languageOptions: { globals: globals.node },
   },
 ])

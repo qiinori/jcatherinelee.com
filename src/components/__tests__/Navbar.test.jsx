@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect, vi, beforeAll, beforeEach, test } from 'vitest';
+import { describe, expect, vi, beforeAll, beforeEach, test } from 'vitest';
 import Navbar from '../Navbar';
 
 // Mock IntersectionObserver

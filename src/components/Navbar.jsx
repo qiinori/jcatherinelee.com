@@ -2,28 +2,23 @@ import ScrambleText from './ScrambleText';
 import { useState, useEffect } from 'react';
 import { content } from '../content.js';
 
+const getInitialTheme = () => {
+    try {
+        return localStorage.getItem('theme_v2') || 'dark';
+    } catch {
+        // LocalStorage access denied, using default theme behavior
+        return 'dark';
+    }
+};
+
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState(getInitialTheme);
     const [activeSection, setActiveSection] = useState('');
 
     useEffect(() => {
-        let savedTheme = null;
-        try {
-            savedTheme = localStorage.getItem('theme_v2');
-        } catch (e) {
-            // LocalStorage access denied, using default theme behavior
-        }
-
-        if (savedTheme) {
-            setTheme(savedTheme);
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        } else {
-            // Default to dark mode if no preference saved
-            setTheme('dark');
-            document.documentElement.setAttribute('data-theme', 'dark');
-        }
-    }, []);
+        document.documentElement.setAttribute('data-theme', theme);
+    }, [theme]);
 
     // Scroll Spy for Activity Highlighting
     useEffect(() => {
@@ -70,10 +65,9 @@ const Navbar = () => {
     const toggleTheme = () => {
         const newTheme = theme === 'dark' ? 'light' : 'dark';
         setTheme(newTheme);
-        document.documentElement.setAttribute('data-theme', newTheme);
         try {
             localStorage.setItem('theme_v2', newTheme);
-        } catch (e) {
+        } catch {
             // Suppress storage errors
         }
     };

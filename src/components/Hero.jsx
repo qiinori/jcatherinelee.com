@@ -1,5 +1,4 @@
 import { content } from '../content';
-import { useEffect, useRef } from 'react';
 
 const Hero = () => {
     const { corners } = content.hero;

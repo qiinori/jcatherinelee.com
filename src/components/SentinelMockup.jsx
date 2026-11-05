@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState, useCallback, useMemo } from 'react';
+import { useRef, useEffect, useState, useMemo } from 'react';
 import { useInView } from 'framer-motion';
 
 // ── Data ──────────────────────────────────────────────
@@ -259,7 +259,7 @@ function useAnimatedValue(ref, target, formatter, enabled) {
 
     rafId.current = requestAnimationFrame(tick);
     return () => { if (rafId.current) cancelAnimationFrame(rafId.current); };
-  }, [target, enabled, formatter]);
+  }, [ref, target, enabled, formatter]);
 }
 
 // ── Formatters ───────────────────────────────────────

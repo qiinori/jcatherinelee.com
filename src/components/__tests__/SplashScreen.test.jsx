@@ -1,10 +1,9 @@
 import { render } from '@testing-library/react';
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import SplashScreen, { resetSessionState } from '../SplashScreen';
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import SplashScreen from '../SplashScreen';
 
 describe('SplashScreen Component', () => {
     beforeEach(() => {
-        resetSessionState();
         // Create the splash-screen element that would exist in index.html
         const splash = document.createElement('div');
         splash.id = 'splash-screen';

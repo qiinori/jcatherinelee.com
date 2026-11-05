@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useEffectEvent } from 'react';
 
 const chars = '!<>-_\\/[]{}—=+*^?#________';
 
@@ -36,10 +36,12 @@ const ScrambleText = ({ text, triggerOnMount = false, delay = 0, triggerKey }) =
         }, 30);
     };
 
+    const runScramble = useEffectEvent(scramble);
+
     useEffect(() => {
         if (triggerOnMount) {
             const timeout = setTimeout(() => {
-                scramble();
+                runScramble();
                 hasMounted.current = true;
             }, delay);
             return () => clearTimeout(timeout);
@@ -56,7 +58,7 @@ const ScrambleText = ({ text, triggerOnMount = false, delay = 0, triggerKey }) =
         }
         if (triggerKey !== prevTriggerKey.current) {
             prevTriggerKey.current = triggerKey;
-            scramble();
+            runScramble();
         }
     }, [triggerKey]);
 
