@@ -28,16 +28,25 @@ const NavigationHandler = () => {
 
   // Scroll handling
   useEffect(() => {
-    if (hash) {
-      setTimeout(() => {
-        const element = document.querySelector(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
+    if (!hash) {
       window.scrollTo(0, 0);
+      return;
     }
+
+    const scrollToHash = () => {
+      const element = document.querySelector(hash);
+      element?.scrollIntoView({ behavior: 'smooth' });
+      return Boolean(element);
+    };
+
+    if (scrollToHash()) return;
+
+    // Lazy-loaded sections may not exist yet on a direct visit.
+    const observer = new MutationObserver(() => {
+      if (scrollToHash()) observer.disconnect();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+    return () => observer.disconnect();
   }, [pathname, hash]);
 
   // Animation handling
