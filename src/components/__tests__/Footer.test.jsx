@@ -17,7 +17,7 @@ describe('Footer Component', () => {
 
         expect(linkedin.closest('a')).toHaveAttribute('href', 'https://linkedin.com/in/cathyleedev');
         expect(github.closest('a')).toHaveAttribute('href', 'https://github.com/qiinori');
-        expect(email.closest('a')).toHaveAttribute('href', 'mailto:hi@cathylee.dev');
+        expect(email.closest('a')).toHaveAttribute('href', 'mailto:c@jcatherinelee.com');
     });
 
     it('displays copyright information', () => {

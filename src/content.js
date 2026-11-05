@@ -158,7 +158,7 @@ export const content = {
         links: [
             { label: "LinkedIn", url: "https://linkedin.com/in/cathyleedev" },
             { label: "GitHub", url: "https://github.com/qiinori" },
-            { label: "Email", url: "mailto:hi@cathylee.dev" }
+            { label: "Email", url: "mailto:c@jcatherinelee.com" }
         ],
         copyright: "© 2026 Cathy Lee."
     }
