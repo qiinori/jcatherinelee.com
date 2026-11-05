@@ -22,3 +22,6 @@ class IntersectionObserverMock {
 }
 
 vi.stubGlobal('IntersectionObserver', IntersectionObserverMock);
+
+// jsdom does not implement SVG geometry methods.
+window.SVGElement.prototype.getTotalLength = () => 0;
