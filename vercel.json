@@ -1,4 +1,7 @@
 {
+  "rewrites": [
+    { "source": "/archive", "destination": "/index.html" }
+  ],
   "headers": [
     {
       "source": "/demo_video.(webm|mp4)",
