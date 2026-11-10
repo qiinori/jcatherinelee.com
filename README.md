@@ -1,4 +1,4 @@
-# cathylee.dev
+# jcatherinelee.com
 
 A modern, responsive personal portfolio website built with React, Vite, and Framer Motion.
 
